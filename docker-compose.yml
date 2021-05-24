@@ -1,0 +1,12 @@
+version: "3"
+#https://javahowtos.com/guides/124-docker/414-solved-cannot-kill-docker-container-permission-denied.html
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - /home/node/app/node_modules
+      - .:/home/node/app
